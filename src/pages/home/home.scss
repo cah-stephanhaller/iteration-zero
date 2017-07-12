@@ -1,3 +1,29 @@
 page-home {
-
+  .item-section-header {
+    font-size: 2.5vh;
+    line-height: 2.5vh;    
+  }
+  .item-sub-header {
+    font-size: 2.0vh;
+    line-height: 2.0vh;
+  }
+  .item-sub-header-right {
+    font-size: 1.5vh;
+    line-height: 1.5vh;    
+    float: right;
+    padding-right: 5vw;
+  }  
+  .item-detail {
+    font-size: 1.5vh;
+    line-height: 1.5vh;
+    color: color($colors, darkgrey);  
+  }
+  .item-spacer {
+    height: 1vh;
+    width: 100%;
+  }
+  .item-arrow-right {
+    cursor: pointer;
+    cursor: hand;    
+  }
 }

@@ -1,14 +1,58 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+      <ion-title>
+        <img src = "assets/images/IterationZero-Long.png" style="max-width: 100vw;" />
+      </ion-title>
+      <!--<ion-buttons end>
+        <button ion-button icon-only (click)="addChecklist()"><ion-icon name="add-circle"></ion-icon></button>
+      </ion-buttons>-->
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<!--<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">A</ion-item-divider>
+    <ion-item>Angola</ion-item>
+    <ion-item>Argentina</ion-item>
+    <ion-item-divider color="light">B</ion-item-divider>
+    <ion-item>BAngola</ion-item>
+    <ion-item>BArgentina</ion-item>    
+  </ion-item-group>
+</ion-content>-->
+
+<ion-content> <!-- This adds scrolling //-->
+  <ion-list>
+    <div *ngFor="let timeSlot of timeSlots">
+      <ion-list-header color="light" class="item-section-header">
+        {{timeSlot.time}}
+      </ion-list-header>
+      <ion-item>
+        <!--<ion-icon name="leaf" item-start></ion-icon>-->
+        <ion-avatar item-start>
+          <img src={{timeSlot.image}}>
+        </ion-avatar>
+
+        <ion-grid>
+          <div *ngFor="let calendarItem of timeSlot.calendarItems; let i = index;">
+            <ion-row class="app-grid-padding">
+              <ion-col class="app-grid-padding">
+                <h2 class="item-sub-header">{{calendarItem.type}}</h2>
+              </ion-col>
+              <ion-col class="app-grid-padding">
+                <div class="item-sub-header-right">{{calendarItem.location}}</div>            
+              </ion-col>
+            </ion-row>
+            <ion-row class="app-grid-padding">
+              <ion-col class="app-grid-padding">
+                <h3 class="item-detail">{{calendarItem.title}}</h3>
+              </ion-col>
+            </ion-row>
+            <div class="item-spacer">&nbsp;</div>         
+          </div>
+        </ion-grid>
+
+        <ion-icon name="arrow-dropright-circle" item-end color="primary" (click)="goToDetails()" class="item-arrow-right"></ion-icon>   
+      </ion-item>
+    </div>
+  </ion-list>
 </ion-content>

@@ -33,14 +33,16 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+// For info look at: https://ionicframework.com/docs/theming/theming-your-app/
+
 $colors: (
-  primary:    #488aff,
+  primary:    #5b9bd5,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  darkgrey: #696969
 );
-
 
 // App iOS Variables
 // --------------------------------------------------
@@ -86,3 +88,7 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+// Custom Variables
+
+$app-grid-padding: 0;
