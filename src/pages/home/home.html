@@ -22,24 +22,24 @@
 
 <ion-content> <!-- This adds scrolling //-->
   <ion-list>
-    <div *ngFor="let timeSlot of timeSlots">
+    <div *ngFor="let timeSlot of timeSlots; let i = index;">
       <ion-list-header color="light" class="item-section-header">
         {{timeSlot.time}}
       </ion-list-header>
       <ion-item>
-        <!--<ion-icon name="leaf" item-start></ion-icon>-->
-        <ion-avatar item-start>
+        <ion-icon class="item-icon" name={{timeSlot.icon}} item-start></ion-icon>
+        <!-- <ion-avatar item-start>
           <img src={{timeSlot.image}}>
-        </ion-avatar>
+        </ion-avatar> -->
 
         <ion-grid>
-          <div *ngFor="let calendarItem of timeSlot.calendarItems; let i = index;">
+          <div *ngFor="let calendarItem of timeSlot.calendarItems">
             <ion-row class="app-grid-padding">
               <ion-col class="app-grid-padding">
                 <h2 class="item-sub-header">{{calendarItem.type}}</h2>
               </ion-col>
-              <ion-col class="app-grid-padding">
-                <div class="item-sub-header-right">{{calendarItem.location}}</div>            
+              <ion-col class="app-grid-padding item-sub-header-right">
+                {{calendarItem.location}}
               </ion-col>
             </ion-row>
             <ion-row class="app-grid-padding">
@@ -51,7 +51,7 @@
           </div>
         </ion-grid>
 
-        <ion-icon name="arrow-dropright-circle" item-end color="primary" (click)="goToDetails()" class="item-arrow-right"></ion-icon>   
+        <ion-icon name="arrow-dropright-circle" item-end color="primary" (click)="goToDetails(i)" class="item-arrow-right"></ion-icon>   
       </ion-item>
     </div>
   </ion-list>

@@ -2,9 +2,9 @@ import { CalendarModel } from './calendar-model';
 
 export class TimeSlotModel {
 
-  constructor(public time: string, public image: string, public calendarItems: CalendarModel[] ) {
+  constructor(public time: string, public icon: string, public calendarItems: CalendarModel[] ) {
     this.time = time;
-    this.image = image;
+    this.icon = icon;
     this.calendarItems = calendarItems;
   }
 }

@@ -8,10 +8,9 @@ page-home {
     line-height: 2.0vh;
   }
   .item-sub-header-right {
-    font-size: 1.5vh;
-    line-height: 1.5vh;    
-    float: right;
-    padding-right: 5vw;
+    font-size: 1.8vh;
+    padding-right: 5%;
+    text-align: right;
   }  
   .item-detail {
     font-size: 1.5vh;
@@ -25,5 +24,8 @@ page-home {
   .item-arrow-right {
     cursor: pointer;
     cursor: hand;    
+  }
+  .item-icon {
+    font-size: 5vh;
   }
 }

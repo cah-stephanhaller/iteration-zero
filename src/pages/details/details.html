@@ -7,12 +7,73 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>details</ion-title>
+    <ion-title>Details</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content class="cards-bg social-cards">
+  <ion-card *ngFor="let calendarItem of calendarItems; let i = index;">
 
-<ion-content padding>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='time'></ion-icon>
+          {{ calendarItem.time }}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='clock'></ion-icon>
+          {{ calendarItem.duration }}
+        </button>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          {{ calendarItem.location }}
+        </ion-note>
+      </ion-col>    
+    </ion-row>    
 
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/images/IterationZero-Icon-20.png">
+      </ion-avatar>
+      <h2>{{calendarItem.speaker}}</h2>
+      <p>{{calendarItem.title}}</p>
+    </ion-item>
+
+    <img src={{calendarItem.image}} style="width: 50%;">
+
+    <ion-card-content>
+      <p>{{calendarItem.description}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='chatboxes'></ion-icon>
+          {{calendarItem.type}}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='keypad'></ion-icon>
+          {{calendarItem.subtype}}
+        </button>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          {{calendarItem.level}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>

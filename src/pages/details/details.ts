@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CalendarModel } from '../../models/calendar-model';
+import { TimeSlotModel } from '../../models/timeslot-model';
+import { DataProvider } from '../../providers/data/data';
 
 /**
  * Generated class for the DetailsPage page.
@@ -14,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private index: number;
+  private calendarItems: CalendarModel[] = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataProvider) {
+    this.index = this.navParams.get('index');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
-  }
 
+    let timeSlotModel: TimeSlotModel = this.dataService.getCalendarData()[this.index];
+    if( null != timeSlotModel ) {
+      this.calendarItems = timeSlotModel.calendarItems;
+    }
+  }
 }

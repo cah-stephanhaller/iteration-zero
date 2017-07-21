@@ -23,7 +23,9 @@ export class HomePage {
     this.timeSlots = this.dataService.getCalendarData();
   }
 
-  goToDetails(): void {
-    alert('Hello');
+  goToDetails(index: number): void {
+    this.navCtrl.push('DetailsPage', {
+      index: index
+    });
   }
 }

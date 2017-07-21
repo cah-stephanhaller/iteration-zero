@@ -11,32 +11,42 @@ import { CalendarModel } from '../../models/calendar-model';
 @Injectable()
 export class DataProvider {
 
-  private timeSlots: TimeSlotModel[] = [];
+  private timeSlots: TimeSlotModel[] = [
+    {time: '9:00 AM', icon: 'chatbubbles', calendarItems: [
+      {time: '9:00 AM', type: 'Presentation', title: 'JIRA and Confluence Tips and Tricks', location: 'Training Room A', speaker: 'BJ Allmon', duration: '2 hour', subtype: 'Tools', level: 'Beginner', image: 'assets/images/presentation-meeting.jpg', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'},
+      {time: '9:00 AM', type: 'Case Study', title: 'Puerto Rico\'s Agile Journey', location: 'Training Room C', speaker: 'Marcos Rosado, Juan Carlos Morales, Cynthia Rivera', duration: '1 hour', subtype: 'General', level: 'Beginner', image: 'assets/images/case-study.png', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'}
+      ]
+    },
+    {time: '10:15 AM', icon: 'chatbubbles', calendarItems: [
+      {time: '10:15 AM', type: 'Presentation', title: 'What is Agile….the Cliff Notes Version', location: 'Training Room B', speaker: 'Marty Vian', duration: '1 hour', subtype: 'General', level: 'Beginner', image: 'assets/images/presentation-meeting.jpg', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'},
+      {time: '10:15 AM', type: 'Presentation', title: 'Design Thinking, a Primer', location: 'Training Room A', speaker: 'Beverly Sunkle', duration: '1 hour', subtype: 'General', level: 'Beginner', image: 'assets/images/presentation-meeting.jpg', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'}
+      ]
+    },
+    {time: '12:00 PM', icon: 'pizza', calendarItems: [
+      {time: '12:00 PM', type: 'Lunch', title: 'Lunch is provided!!', location: 'Cafeteria', speaker: '', duration: '', subtype: '', level: '', image: '', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'}
+      ]
+    },    
+    {time: '1:00 PM', icon: 'chatbubbles', calendarItems: [
+      {time: '1:00 PM', type: 'Demo', title: 'Hiptest - Less Code, Reusable Requirement, More Happiness', location: 'Training Room C', speaker: '', duration: '', subtype: '', level: '', image: '', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'},
+      {time: '1:00 PM', type: 'Presentation', title: 'The Value of Managing Work Visually', location: 'Training Room A', speaker: '', duration: '', subtype: '', level: '', image: '', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'}
+      ]
+    },
+    {time: '2:15 PM', icon: 'chatbubbles', calendarItems: [
+      {time: '2:15 PM', type: 'Presentation, Demo', title: 'CI/CD Automation for Mobile Apps', location: 'LE-1', speaker: '', duration: '', subtype: '', level: '', image: '', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'},
+      {time: '2:15 PM', type: 'Presentation', title: 'What is Machine Learning and Why Does it Matter?', location: 'LE-2', speaker: '', duration: '', subtype: '', level: '', image: '', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'}
+      ]
+    },
+    {time: '3:30 PM', icon: 'chatbubbles', calendarItems: [
+      {time: '3:30 PM', type: 'Presentation, Demo', title: 'Pairing is Caring', location: 'LE-2', speaker: '', duration: '', subtype: '', level: '', image: '', description: 'We\'ll enter a description of the conference registration here….We\'ve asked for descriptions to be 70 words or less.'}
+      ]
+    }
+  ];
 
   constructor() {
     console.log('Hello DataProvider');
   }
 
   getCalendarData(): TimeSlotModel[] {
-
-    // 9:00 AM.
-    var calendarItems1: CalendarModel[] = [];
-    let calendarItem1 = new CalendarModel('Presentation', 'JIRA and Confluence Tips and Tricks', 'Training Room A');
-    let calendarItem2 = new CalendarModel('Case Study', 'Puerto Rico\'s Agile Journey', 'Training Room C');
-    calendarItems1.push(calendarItem1);
-    calendarItems1.push(calendarItem2);
-    let timeSlot1 = new TimeSlotModel('9:00 AM', 'assets/images/advance-card-tmntr.jpg', calendarItems1);
-
-    // 10:15 AM.
-    var calendarItems2: CalendarModel[] = [];
-    let calendarItem3 = new CalendarModel('Presentation', 'What is Agile….the Cliff Notes Version', 'Training Room B');
-    let calendarItem4 = new CalendarModel('Presentation', 'Design Thinking, a Primer', 'Training Room A');
-    calendarItems2.push(calendarItem3);
-    calendarItems2.push(calendarItem4);
-    let timeSlot2 = new TimeSlotModel('10:15 AM', 'assets/images/advance-card-tmntr.jpg', calendarItems2);
-
-    this.timeSlots.push(timeSlot1);
-    this.timeSlots.push(timeSlot2);
     return this.timeSlots;
   }
  }
