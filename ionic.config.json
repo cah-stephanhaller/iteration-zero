@@ -1,5 +1,8 @@
 {
   "name": "iterationzeroapp",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "82eeb9ff",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

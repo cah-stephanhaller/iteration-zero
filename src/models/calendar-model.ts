@@ -6,20 +6,22 @@ export class CalendarModel {
               public location: string, 
               public speaker: string, 
               public duration: string, 
-              public subtype: string, 
+              public track: string, 
               public level: string,
               public image: string,
-              public description: string) {
+              public abstract: string,
+              public bio: string) {
     this.time = time;
     this.type = type;
     this.title = title;
     this.location = location;
     this.speaker = speaker;
     this.duration = duration;
-    this.subtype = subtype;
+    this.track = track;
     this.level = level;
     this.image = image;
-    this.description = description;
+    this.abstract = abstract;
+    this.bio = bio;
   }
 
   // setTime(time: string) : void {

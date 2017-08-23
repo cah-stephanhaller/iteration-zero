@@ -29,7 +29,7 @@
         </button>
       </ion-col>
       <ion-col align-self-center text-center>
-        <ion-note>
+        <ion-note color="darkgrey">
           {{ calendarItem.location }}
         </ion-note>
       </ion-col>    
@@ -39,14 +39,15 @@
       <ion-avatar item-start>
         <img src="assets/images/IterationZero-Icon-20.png">
       </ion-avatar>
+      <h1 class="title">{{calendarItem.title}}</h1>
       <h2>{{calendarItem.speaker}}</h2>
-      <p>{{calendarItem.title}}</p>
+      <p class="bio">{{calendarItem.bio}}</p>
     </ion-item>
 
-    <img src={{calendarItem.image}} style="width: 50%;">
+    <img src={{calendarItem.image}} style="width: 40%;">
 
     <ion-card-content>
-      <p>{{calendarItem.description}}</p>
+      <p>{{calendarItem.abstract}}</p>
     </ion-card-content>
 
     <ion-row>
@@ -59,11 +60,11 @@
       <ion-col>
         <button ion-button color="primary" clear small icon-start>
           <ion-icon name='keypad'></ion-icon>
-          {{calendarItem.subtype}}
+          {{calendarItem.track}}
         </button>
       </ion-col>
       <ion-col align-self-center text-center>
-        <ion-note>
+        <ion-note color="darkgrey">
           {{calendarItem.level}}
         </ion-note>
       </ion-col>

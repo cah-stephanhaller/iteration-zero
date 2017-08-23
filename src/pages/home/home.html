@@ -36,15 +36,19 @@
           <div *ngFor="let calendarItem of timeSlot.calendarItems">
             <ion-row class="app-grid-padding">
               <ion-col class="app-grid-padding">
-                <h2 class="item-sub-header">{{calendarItem.type}}</h2>
+                <h2 class="item-sub-header">
+                  {{calendarItem.title}}
+                </h2>
               </ion-col>
-              <ion-col class="app-grid-padding item-sub-header-right">
+              <!-- <ion-col class="app-grid-padding item-sub-header-right">
                 {{calendarItem.location}}
-              </ion-col>
+              </ion-col> -->
             </ion-row>
             <ion-row class="app-grid-padding">
               <ion-col class="app-grid-padding">
-                <h3 class="item-detail">{{calendarItem.title}}</h3>
+                <h3 class="item-detail">
+                  {{calendarItem.speaker}}
+                </h3>
               </ion-col>
             </ion-row>
             <div class="item-spacer">&nbsp;</div>         

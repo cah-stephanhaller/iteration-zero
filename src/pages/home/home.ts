@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, Platform } from 'ionic-angular';
-import { CalendarModel } from '../../models/calendar-model';
 import { TimeSlotModel } from '../../models/timeslot-model';
 import { DataProvider } from '../../providers/data/data';
 
